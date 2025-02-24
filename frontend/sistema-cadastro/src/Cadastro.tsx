@@ -107,6 +107,9 @@ const Cadastro: React.FC = () => {
     navigate(-1); // Navega para a página anterior
   };
 
+  // Obtém a data de hoje no formato YYYY-MM-DD
+  const today = new Date().toISOString().split('T')[0];
+
   return (
     <div className="container">
          <Navbar />
@@ -153,6 +156,7 @@ const Cadastro: React.FC = () => {
             value={formData.dataRegistro}
             onChange={handleChange}
             required
+            max={today} // Limita a data de registro até hoje
           />
           {errors.dataRegistro && <div className="text-danger">{errors.dataRegistro}</div>}
         </div>
