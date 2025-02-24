@@ -1,4 +1,4 @@
-# Sistema de gerenciamento de empresas
+# Sistema de Gerenciamento de Empresas
 
 Este projeto consiste em um sistema de cadastro de empresas, dividido em frontend e backend. O backend é desenvolvido em Node.js com TypeScript e utiliza SQLite como banco de dados. O frontend é desenvolvido em React com TypeScript.
 
@@ -6,13 +6,15 @@ Este projeto consiste em um sistema de cadastro de empresas, dividido em fronten
 
 ```
 /desafioLiberium
-│── api-cadastro (Backend)
-│   │── database.db (Banco de dados SQLite)
-│   │── package.json (Configuração do Node.js)
-│   │── routes.ts (Definição das rotas)
-│   │── server.ts (Configuração do servidor)
-│   │── database.ts (Conexão com o banco de dados)
-│   │── validacao.ts (Regras de validação)
+│── backend (Backend)
+│   │── api-cadastro
+│   │   │── database.db (Banco de dados SQLite)
+│   │   │── package.json (Configuração do Node.js)
+│   │   │── routes.ts (Definição das rotas)
+│   │   │── server.ts (Configuração do servidor)
+│   │   │── database.ts (Conexão com o banco de dados)
+│   │   │── validacao.ts (Regras de validação)
+│   │   │── .env (Configuração da porta do servidor)
 │
 │── frontend (Frontend React)
 │   │── sistema-cadastro
@@ -32,6 +34,7 @@ Este projeto consiste em um sistema de cadastro de empresas, dividido em fronten
 - TypeScript
 - Express
 - SQLite
+- dotenv (Para gerenciar variáveis de ambiente)
 
 ### Frontend
 - React.js
@@ -42,15 +45,19 @@ Este projeto consiste em um sistema de cadastro de empresas, dividido em fronten
 ### Backend
 1. Acesse a pasta do backend:
    ```sh
-   cd api-cadastro
+   cd backend/api-cadastro
    ```
-2. Instale as dependências:
+2. Crie um arquivo `.env` e adicione a seguinte configuração:
+   ```sh
+   PORT=8000
+   ```
+3. Instale as dependências:
    ```sh
    npm install
    ```
-3. Inicie o servidor backend (porta 8000):
+4. Inicie o servidor backend:
    ```sh
-   npm start
+   npm run dev
    ```
 
 ### Frontend
@@ -67,7 +74,10 @@ Este projeto consiste em um sistema de cadastro de empresas, dividido em fronten
    npm start
    ```
 
-O frontend se conecta ao backend na porta 8000.
+O frontend se conecta ao backend na porta definida no arquivo `.env` (padrão: 8000).
+
+## Regras de Cadastro
+- O CNPJ deve conter apenas números.
 
 ## Licença
 Este projeto está sob a licença MIT.
