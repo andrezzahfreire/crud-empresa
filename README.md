@@ -5,7 +5,7 @@ Este projeto consiste em um sistema de cadastro de empresas, dividido em fronten
 ## Estrutura do Projeto
 
 ```
-/desafioLiberium
+/desafioFullstack
 │── backend (Backend)
 │   │── api-cadastro
 │   │   │── database.db (Banco de dados SQLite)
